@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
     
 <!DOCTYPE html>
 <html>
@@ -42,7 +43,9 @@
 				<td>${x.emplAddress}</td>
 				<td>
 					<a href="${tempUpdate}">Edit |</a>
-					<a href="${tempDelete}" onclick="if(!(confirm('Are you sure?'))) return false">Delete</a> | 			
+					<security:authorize access="hasRole('ADMIN')">
+						<a href="${tempDelete}" onclick="if(!(confirm('Are you sure?'))) return false">Delete</a> | 	
+					</security:authorize>		
 					<a href="${tempCompetency}">View Competency</a>
 				</td>
 			</tr>
@@ -51,9 +54,13 @@
 	<a href="${pageContext.request.contextPath}">
 		<input type="button" class="btn btn-primary" value="Back to Home"></input>
 	</a>
-	<a href="${pageContext.request.contextPath}/employee/new">
-		<input type="button" class="btn btn-success" value="Add New Employee"></input>
-	</a></div>
+	
+	<security:authorize access="hasRole('ADMIN')">
+		<a href="${pageContext.request.contextPath}/employee/new">
+			<input type="button" class="btn btn-success" value="Add New Employee"></input>
+		</a>
+	</security:authorize>
+	</div>
 
 </body>
 </html>
