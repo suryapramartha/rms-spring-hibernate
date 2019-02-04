@@ -3,8 +3,11 @@ this is RMS project with simple CRUD feature using :
 - Spring MVC
 - Hibernate for ORM
 - MySQL for Database
+- Spring Security for Login and Role setting
 
 and More to come (on progress) :
 - Thymeleaf
-- Spring Security 
 - Spring Boot
+
+
+Note : Please refer to Spring Security Javadoc for JDBC database setting (Tables, field)
