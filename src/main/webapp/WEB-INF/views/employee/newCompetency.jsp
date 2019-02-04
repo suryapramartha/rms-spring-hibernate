@@ -53,6 +53,7 @@
 							</c:choose>
 						</td>
 					</tr>
+					
 					<c:url var="tempCancel" value="view-competency">
 						<c:param name="employeeId" value="${temp.emplId}"></c:param>
 					</c:url>
@@ -60,6 +61,7 @@
 				</table>
 				<br><input type="submit" value="Create" class="btn btn-success" >
 			</div>
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"> 
 		</form>
 		<a href="${tempCancel}">
  			<button class="btn btn-primary">Cancel</button>
