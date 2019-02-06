@@ -5,9 +5,5 @@ this is RMS project with simple CRUD feature using :
 - MySQL for Database
 - Spring Security for Login and Role setting
 
-and More to come (on progress) :
-- Thymeleaf
-- Spring Boot
-
 
 Note : Please refer to Spring Security Javadoc for JDBC database setting (Tables, field)
